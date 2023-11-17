@@ -1,7 +1,7 @@
-# Privateness network EmerNVS 
+# Privateness network EmerNVS abstraction interface
 
-## Buy EmerNVS records with NESS, NCH or EMC
-## Available on DEX: https://ex.xbts.io/asset/XBTSX.NESS .NCH or .EMC
+## Buy EmerNVS records using NESS, NCH (or EMC)
+## DEX: https://ex.xbts.io/asset/XBTSX.NESS .NCH and .EMC
 
 Execute in a Terminal:
 
