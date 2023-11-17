@@ -1,12 +1,13 @@
-# Emercoin NVS exchange
+# Privateness network EmerNVS 
 
-## Buy NVS records for EMC, NESS, NCH
+## Buy EmerNVS records with NESS, NCH or EMC
+## Available on DEX: https://ex.xbts.io/asset/XBTSX.NESS .NCH or .EMC
 
-Execute
+Execute in a Terminal:
 
 `mv config/config.sample.php config/config.php`
 
-Edit `config.php`
+Edit `config/config.php`
 
 ### Commands
 
