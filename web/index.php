@@ -213,14 +213,14 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
     id="name" 
     name="name" 
     value="<?=$name?>" 
-    placeholder=" dns:ness.bts" 
+    placeholder=" dns:privateness.lib" 
     required>
                    
                    
       <div 
         id="nameHelp" 
         class="form-text">
-        Enter desired or requested NVS name
+        Fullname of the NVS record to Create, Read, Update or Delete
       </div>
    </div>
 
@@ -239,7 +239,7 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
     id="days" 
     name="days" 
     value="<?=$days?>" 
-    min="100"
+    min="365"
     required>
                    
                    
@@ -270,7 +270,7 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
       <div 
         id="nameHelp" 
         class="form-text">
-        Enter your emercoin address (if you want to export this NVS to outer wallet)
+        Enter your own Emercoin address to take or modify Ownership of the record (Highly Recommended)
       </div>
    </div>
                
