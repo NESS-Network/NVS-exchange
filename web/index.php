@@ -56,7 +56,7 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Emercoin Name-Value Exchange</title>
+    <title>Emercoin Name:Value System CRUD interface</title>
     
     <!-- Custom CSS for appealing UI -->
     <style>
@@ -101,7 +101,7 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
               }
         body {
             background-color: #367CA5;
-            color: white;
+            color: black;
             font-family: Arial, sans-serif;
         }
 
@@ -195,8 +195,8 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>NVS Exchange</h1>
-            <h3>Emercoin (EMC) and Privateness (NESS or NCH) to NVS</h3>
+            <h1>EmerNVS CRUD Interface</h1>
+            <h3>XBTSX.NCH, NESS, EMC </h3>
 
   <form method="POST">
     <div class="mb-3">
