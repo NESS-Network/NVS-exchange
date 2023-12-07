@@ -9,7 +9,7 @@ namespace lib;
  */
 class Ness {
   private $host = '';
-  private $port = 6460;
+  private $port = 6660;
   private $main_wallet_id = '';
   private $wallets;
   private $prefix = '';
