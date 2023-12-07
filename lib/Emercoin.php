@@ -14,7 +14,7 @@ class Emercoin {
   public static $username = '';
   public static $password = '';
   public static $address = 'localhost';
-  public static $port = '8332';
+  public static $port = '6662';
   public static $account_prefix = 'emc_terminal_';
   public static $comission = 0.1;
   /**
