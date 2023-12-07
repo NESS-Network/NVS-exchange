@@ -121,7 +121,7 @@ $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP
               }
         body {
             background-color: #367CA5;
-            color: white;
+            color: black;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -211,13 +211,13 @@ $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP
 
         .text-line {
             text-decoration: underline;
-            color: black;
+            color: white;
             font-style: italic;
             font-size: 0.8em;
         }
         
         .name, .value {
-             color: black;
+             color: white;
              font-style: italic;
              font-size: 0.8em;
         }
@@ -319,7 +319,7 @@ $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP
           </h1>
 
             <a href="javascript:void(0)" onclick="CreateBookmarkLink()">
-                Bookmark page (press Ctrl+D to bookmark this page if link does not work)
+                Bookmark page (press Ctrl+D to bookmark this page as permanent link)
             </a> 
             <br/><br/>
             <div id="copy_url">
@@ -459,7 +459,7 @@ $actual_link = (empty($_SERVER['HTTPS']) ? 'http' : 'https') . "://$_SERVER[HTTP
         <a 
             class="btn btn-primary"
             href="/edit.php?slot=<?= $slot['slot_id'] ?>">
-            Edit Name-Value record
+            Edit Name:Value record
         </a>
     <?php endif; ?>
         </div>
