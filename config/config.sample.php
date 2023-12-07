@@ -15,7 +15,7 @@ return [
     ],
     'emercoin' => [
         'host' => '127.0.0.1',
-        'port' => '8332',
+        'port' => '6662',
         'user' => '',
         'password' => ''
     ],
@@ -27,9 +27,9 @@ return [
     ],
     'exchange' => [
         'min_sum' => [
-            'emc' => 0.01,
-            'ness' => 0.1,
-            'nch' => 1
+            'emc' => 0.1, /** Incentive given to NCH first, then NESS hence higher rate for EMC */
+            'ness' => 1,
+            'nch' => 100000
         ]
     ]
 ];
