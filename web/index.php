@@ -46,7 +46,7 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
     $name = '';
     $value = '';
     $address = '';
-    $days = 100;
+    $days = 365;
 }
 ?>
 <!doctype html>
@@ -195,7 +195,7 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
 <div class="container">
     <div class="row">
         <div class="col">
-            <h1>EmerNVS CRUD Interface</h1>
+            <h1>EmerNVS Web Interface</h1>
             <h3>XBTSX.NCH, NESS, EMC </h3>
 
   <form method="POST">
