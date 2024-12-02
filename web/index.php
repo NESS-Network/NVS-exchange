@@ -59,6 +59,9 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
     <title>Emercoin Name-Value Exchange</title>
     <meta name="description" content="Secure, decentralized Name-Value Storage solution on Emercoin. Protect and manage your data with advanced blockchain technology. Easy, private, and reliable.">
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nvs.ness.cx/">
@@ -247,6 +250,24 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
             min-height: 150px;
         }
 
+        .textarea-placeholder {
+    white-space: pre-wrap; 
+    word-break: break-word;  
+    max-width: 90%;
+    display: block;
+}
+        .char-count {
+            
+            font-size: 10pt;
+        }
+
+        .overflow-indicator {
+            color: #dc3545;
+            font-weight: bold;
+            font-size: 10pt;
+            display: none;
+        }
+
         /* Alert Styles */
         .alert {
             border-radius: 10px;
@@ -368,10 +389,16 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
                     placeholder=" " 
                     required
                 ><?= $value ?></textarea>
-                <label for="value" class="form-label">Value (NS=ns1.emercoin.com,ns2.emercoin.com)</label>
+                <label for="value" class="form-label textarea-placeholder">Value (NS=ns1.emercoin.com,ns2.emercoin.com)</label>
                 <div class="form-text">Enter desired or requested NVS Value</div>
+                
+                <div id="charCount" class="char-count">
+                    Characters Left: <span id="remainingChars">20480</span>
+                </div>
+                <div class="overflow-indicator" id="overflowIndicator">
+                    Text exceeds maximum length
+                </div>
             </div>
-
             <button type="submit" class="btn-primary">Create Payment Slot</button>
         </form>
         <!-- Alert Messages are hidden in CSS by default -->
@@ -451,6 +478,82 @@ function createMatrixRain() {
 
         createMatrixRain();
 })
+</script>
+
+<script>
+    const textarea = document.getElementById('value');
+    const remainingCharsSpan = document.getElementById('remainingChars');
+    const overflowIndicator = document.getElementById('overflowIndicator');
+
+    const MAX_CHARS = 20480;
+    let lastNotificationTime = 0;
+
+    function showOverflowNotification() {
+    const currentTime = Date.now();
+    
+    // Ensure Swal is defined before calling
+    if (typeof Swal !== 'undefined') {
+        // Prevent multiple notifications in quick succession
+        if (currentTime - lastNotificationTime > 1000) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Text Limit Reached',
+                text: `You have reached the maximum limit of ${MAX_CHARS} characters. Text will be automatically truncated.`,
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 7000,
+                timerProgressBar: true
+            });
+
+            lastNotificationTime = currentTime;
+        }
+    } else {
+        // Fallback notification method if SweetAlert2 is not loaded
+        console.warn('Text limit reached: ' + MAX_CHARS + ' characters');
+        alert('Text limit reached: ' + MAX_CHARS + ' characters');
+    }
+}
+
+    function updateTextAnalytics() {
+        const text = textarea.value;
+        const charCount = text.length;
+        const remainingChars = MAX_CHARS - charCount;
+
+        // Update character count
+        remainingCharsSpan.textContent = Math.max(0, remainingChars);
+        
+        // Handle text overflow
+        if (charCount > MAX_CHARS) {
+            // Truncate text
+            const truncatedText = text.substring(0, MAX_CHARS);
+            textarea.value = truncatedText;
+            
+            // Show visual indicators
+            overflowIndicator.style.display = 'block';
+            
+            // Show notification
+            showOverflowNotification();
+        } else {
+            // Reset overflow state
+            overflowIndicator.style.display = 'none';
+        }
+    }
+
+    // Event listeners
+    textarea.addEventListener('input', updateTextAnalytics);
+    
+    textarea.addEventListener('paste', function(e) {
+        // Delay to ensure paste is processed
+        setTimeout(() => {
+            updateTextAnalytics();
+            
+            // Check if text was truncated
+            if (textarea.value.length === MAX_CHARS) {
+                showOverflowNotification();
+            }
+        }, 0);
+    });
 </script>
 <?php endif; ?>
 
