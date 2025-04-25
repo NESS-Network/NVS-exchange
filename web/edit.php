@@ -328,7 +328,7 @@ if (!empty($_POST['value']) && !empty($_POST['days'])) {
 
             <div class="form-group">
                 <textarea name="value" id="value" class="form-input" cols="25" rows="6" placeholder=" " required><?= $value ?></textarea>
-                <label for="value" class="form-label">Value (NS=ns1.emercoin.com,ns2.emercoin.com)</label>
+                <label for="value" class="form-label">Value (NS=seed1.emercoin.com,seed2.emercoin.com)</label>
                 <div class="form-text">Enter Your Emercoin NVS Value History</div>
             </div>
 
