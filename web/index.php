@@ -389,7 +389,7 @@ if (!empty($_POST['name']) && !empty($_POST['value']) && !empty($_POST['days']))
                     placeholder=" " 
                     required
                 ><?= $value ?></textarea>
-                <label for="value" class="form-label textarea-placeholder">Value (NS=ns1.emercoin.com,ns2.emercoin.com)</label>
+                <label for="value" class="form-label textarea-placeholder">Value (NS=seed1.emercoin.com,seed2.emercoin.com)</label>
                 <div class="form-text">Enter desired or requested NVS Value</div>
                 
                 <div id="charCount" class="char-count">
