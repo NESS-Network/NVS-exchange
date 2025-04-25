@@ -15,7 +15,7 @@ return [
     ],
     'emercoin' => [
         'host' => '127.0.0.1',
-        'port' => '8332',
+        'port' => '6662',
         'user' => '',
         'password' => ''
     ],
